@@ -3,7 +3,8 @@
 This repository contains a collection of snippets for the Zed Editor, designed to enhance productivity when working with Ruby on Rails projects. The ERB snippets cover a wide range of common ERB patterns, including control structures, Rails helpers, and content management, making it easier to write clean and efficient ERB code.
 More snippets will follow.
 
-https://github.com/gobijan/zed-rails-snippets/blob/main/zed-erb-snippets.mov
+https://github.com/user-attachments/assets/51ec5af2-5e63-4bf1-a3d6-45e6bea0d10c
+
 
 ## Installation
 
