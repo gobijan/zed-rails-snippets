@@ -1,0 +1,158 @@
+{
+  "ERB Expression": {
+    "prefix": "ee",
+    "body": "<%= $1 %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts an ERB expression tag for outputting content"
+  },
+  "ERB Statement": {
+    "prefix": "er",
+    "body": "<% $1 %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts an ERB statement tag for Ruby code"
+  },
+  "ERB Comment": {
+    "prefix": "ec",
+    "body": "<%# $1 %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts an ERB comment"
+  },
+  "ERB If Statement": {
+    "prefix": "eif",
+    "body": ["<% if $1 %>", "  $2", "<% end %>"],
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts an ERB if statement"
+  },
+  "ERB If/Else Statement": {
+    "prefix": "eife",
+    "body": ["<% if $1 %>", "  $2", "<% else %>", "  $3", "<% end %>"],
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts an ERB if/else statement"
+  },
+  "ERB Each Loop": {
+    "prefix": "eeach",
+    "body": ["<% $1.each do |$2| %>", "  $3", "<% end %>"],
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts an ERB each loop for iterating over a collection"
+  },
+  "ERB Safe Each Loop": {
+    "prefix": "esafeeach",
+    "body": [
+      "<% if $1.present? %>",
+      "  <% $1.each do |$2| %>",
+      "    $3",
+      "  <% end %>",
+      "<% end %>"
+    ],
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts an ERB each loop with a presence check"
+  },
+  "ERB For Loop": {
+    "prefix": "efor",
+    "body": ["<% for $1 in $2 %>", "  $3", "<% end %>"],
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts an ERB for loop"
+  },
+  "ERB Render Partial": {
+    "prefix": "erp",
+    "body": "<%= render partial: \"$1\" %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Renders a partial template"
+  },
+  "ERB Render Partial with Locals": {
+    "prefix": "erpl",
+    "body": "<%= render partial: \"$1\", locals: { $2: $3 } %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Renders a partial with local variables"
+  },
+  "ERB Render Collection": {
+    "prefix": "erc",
+    "body": "<%= render partial: \"$1\", collection: $2, as: :$3 %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Renders a partial for each item in a collection"
+  },
+  "ERB Link To": {
+    "prefix": "elt",
+    "body": "<%= link_to \"$1\", $2${3:, class: \"$4\"} %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts a Rails link_to helper with optional class"
+  },
+  "ERB Image Tag": {
+    "prefix": "eit",
+    "body": "<%= image_tag \"$1\"${2:, alt: \"$3\", class: \"$4\"} %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts a Rails image_tag helper with optional alt and class"
+  },
+  "ERB Form With": {
+    "prefix": "efw",
+    "body": ["<%= form_with $1 do |f| %>", "  $2", "<% end %>"],
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts a Rails form_with helper"
+  },
+  "ERB Text Field": {
+    "prefix": "etf",
+    "body": "<%= f.text_field :$1${2:, placeholder: \"$3\", class: \"$4\"} %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts a Rails text_field helper with optional placeholder and class"
+  },
+  "ERB Select Tag": {
+    "prefix": "eselect",
+    "body": "<%= f.select :$1, $2${3:, { include_blank: true }, { class: \"$4\" }} %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts a Rails select helper with optional blank and class"
+  },
+  "ERB Submit": {
+    "prefix": "es",
+    "body": "<%= f.submit \"$1\"${2:, class: \"$3\"} %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts a Rails submit button with optional class"
+  },
+  "ERB Button To": {
+    "prefix": "ebt",
+    "body": "<%= button_to \"$1\", $2${3:, class: \"$4\"} %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts a Rails button_to helper with optional class"
+  },
+  "ERB Unless": {
+    "prefix": "eun",
+    "body": ["<% unless $1 %>", "  $2", "<% end %>"],
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts an ERB unless statement"
+  },
+  "ERB Content Tag": {
+    "prefix": "ect",
+    "body": "<%= content_tag :$1, \"$2\"${3:, class: \"$4\"} %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts a Rails content_tag helper with optional class"
+  },
+  "ERB Content For": {
+    "prefix": "ecf",
+    "body": ["<% content_for :$1 do %>", "  $2", "<% end %>"],
+    "scope": "erb,html.erb,eruby",
+    "description": "Inserts a Rails content_for block"
+  },
+  "ERB Yield Content": {
+    "prefix": "eyc",
+    "body": "<%= yield :$1 %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Yields content from a content_for block"
+  },
+  "ERB Content For If": {
+    "prefix": "ecfi",
+    "body": [
+      "<% if content_for?(:$1) %>",
+      "  <%= yield :$1 %>",
+      "<% else %>",
+      "  $2",
+      "<% end %>"
+    ],
+    "scope": "erb,html.erb,eruby",
+    "description": "Conditionally yields content with a fallback"
+  },
+  "ERB Content For With Default": {
+    "prefix": "ecfd",
+    "body": "<%= content_for?(:$1) ? yield(:$1) : \"$2\" %>",
+    "scope": "erb,html.erb,eruby",
+    "description": "Yields content with a default value if absent"
+  }
+}
