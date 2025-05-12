@@ -12,7 +12,7 @@ To use these snippets in Zed Editor, follow these steps:
 
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/yourusername/erb-snippets-zed.git
+   git clone https://github.com/gobijan/zed-rails-snippets.git
    ```
 
 2. **Copy the Snippet File**:
